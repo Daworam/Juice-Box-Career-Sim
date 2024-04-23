@@ -30,57 +30,57 @@ const seedUsers = async () => {
 const seedPosts = async () => {
   const post1 = await prisma.posts.create({
     data: {
-      title: faker.lorem.sentence(),
-      content: faker.lorem.paragraph(),
+      title: faker.lorem.word(),
+      content: faker.lorem.sentence(),
       userId: 1
     }
   })
   const post2 = await prisma.posts.create({
     data: {
-      title: faker.lorem.sentence(),
-      content: faker.lorem.paragraph(),
+      title: faker.lorem.word(),
+      content: faker.lorem.sentence(),
       userId: 1
     }
   })
   const post3 = await prisma.posts.create({
     data: {
-      title: faker.lorem.sentence(),
-      content: faker.lorem.paragraph(),
+      title: faker.lorem.word(),
+      content: faker.lorem.sentence(),
       userId: 1
     }
   })
   const post4 = await prisma.posts.create({
     data: {
-      title: faker.lorem.sentence(),
-      content: faker.lorem.paragraph(),
+      title: faker.lorem.word(),
+      content: faker.lorem.sentence(),
       userId: 2
     }
   })
   const post5 = await prisma.posts.create({
     data: {
-      title: faker.lorem.sentence(),
-      content: faker.lorem.paragraph(),
+      title: faker.lorem.word(),
+      content: faker.lorem.sentence(),
       userId: 2
     }
   })
   const post6 = await prisma.posts.create({
     data: {
-      title: faker.lorem.sentence(),
-      content: faker.lorem.paragraph(),
+      title: faker.lorem.word(),
+      content: faker.lorem.sentence(),
       userId: 2
     }
   })
   const post7 = await prisma.posts.create({
     data: {
-      title: faker.lorem.sentence(),
-      content: faker.lorem.paragraph(),
+      title: faker.lorem.word(),
+      content: faker.lorem.sentence(),
       userId: 3
     }
   })
   const post8 = await prisma.posts.create({
     data: {
-      title: faker.lorem.sentence(),
-      content: faker.lorem.paragraph(),
+      title: faker.lorem.word(),
+      content: faker.lorem.sentence(),
       userId: 3
     }
   })

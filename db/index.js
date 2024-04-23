@@ -51,11 +51,50 @@ const createPost = async (title, content, userId) => {
   }catch(error){
     console.log(error);
   }
-}
+};
+
+const updatePost = async (id, userId, title, content) => {
+  try{
+    const updatedPost = await prisma.posts.update({
+      where: {
+        id,
+        userId
+      },
+      data: {
+        title,
+        content,
+      },
+    });
+    return updatedPost;
+  }catch(error){
+    if(error.code === 'P2025'){
+      return "Not your post, can not update."
+    }
+    console.log(error);
+  }
+};
+
+const deletePost = async (id, userId) => {
+  try{
+    const deletedPost = await prisma.posts.delete({
+      where: {
+        id,
+        userId
+      }
+    });
+  }catch(error){
+    if(error.code === 'P2025'){
+      return "Not your post, can not delete."
+    }
+    return(error);
+  }
+};
 
 module.exports = {
   createUser,
   getAllPosts,
   getPostById,
-  createPost
+  createPost,
+  updatePost,
+  deletePost
 }
