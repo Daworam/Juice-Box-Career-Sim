@@ -36,10 +36,26 @@ const getPostById = async (id) => {
   }catch(error){
     console.log(error);
   }
+};
+
+const createPost = async (title, content, userId) => {
+  try{
+    const newPost = await prisma.posts.create({
+      data: {
+        title,
+        content,
+        userId
+      },
+    });
+    return newPost;
+  }catch(error){
+    console.log(error);
+  }
 }
 
 module.exports = {
   createUser,
   getAllPosts,
-  getPostById
+  getPostById,
+  createPost
 }
