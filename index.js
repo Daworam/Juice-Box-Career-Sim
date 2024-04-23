@@ -23,7 +23,7 @@ app.use((req, res, next) => {
   next();
 })
 
-app.use("/api/v1", require("./api"));
+app.use("/api", require("./api"));
 app.use("/auth", require("./auth"));
 
 app.listen(PORT, () => {

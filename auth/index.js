@@ -12,7 +12,9 @@ router.post("/register", async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, saltRounds);
 
     const registerUser = await createUser(username, hashedPassword);
-    res.send(registerUser);
+
+    const token = jwt.sign({id: registerUser.id}, process.env.JWT);
+    res.send({token});
   }catch(error){
     res.send(error);
   }
