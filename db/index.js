@@ -14,6 +14,14 @@ const createUser = async (username, password) => {
     console.log(error);
     throw(error);
   }
+};
+
+const getAllPosts = async () => {
+  try{
+
+  }catch(error){
+    console.log(error);
+  }
 }
 
 module.exports = {
