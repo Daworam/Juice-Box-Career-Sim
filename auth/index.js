@@ -13,4 +13,23 @@ router.post("/register", async (req, res) => {
   }
 });
 
+router.post("/login", async (req, res, next) => {
+  try{
+    const {username, password} = req.body;
+    const logUser = await prisma.users.findUnique({
+      where: {
+        username,
+        password,
+      }
+    });
+
+    if(!logUser){
+      return res.status(401).send("Username or Password is incorrect, please try again.")
+    }
+    res.send("Success");
+  }catch(error){
+    next(error);
+  }
+})
+
 module.exports = router;
