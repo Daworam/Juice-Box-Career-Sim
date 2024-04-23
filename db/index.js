@@ -82,6 +82,7 @@ const deletePost = async (id, userId) => {
         userId
       }
     });
+    return deletedPost;
   }catch(error){
     if(error.code === 'P2025'){
       return "Not your post, can not delete."
